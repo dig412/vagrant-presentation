@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Title</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="webfonts/ostrich-sans.css" />
+		<link rel="stylesheet" type="text/css" href="webfonts/linden-hill.css" />
+		<style type="text/css">
+			@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+
+			body { font-family: 'Droid Serif'; }
+			h1, h2, h3 {
+				font-family: 'Ostrich Sans';
+				font-weight: 900;
+			}
+			.remark-code, .remark-inline-code { 
+				font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="source">
+
+class: center, middle
+
+# Vagrant + PHP: 
+## Beyond PuPHPet
+![PuPHPet Logo](images/combo-logo.png)
+
+---
+class: center, middle
+
+background-image: url(images/crowd.jpg)
+
+![Ents24 Logo](images/logo.png)
+
+# Ticket Shop & Gig Guide
+
+---
+#Why we use Vagrant
+
+* 6 Developers
+  * 3 Linux
+  * 2 Windows
+  * 1 Mac
+
+* 11 Software Packages
+  * Apache
+  * PHP
+  * MySQL
+  * MemcacheD
+  * BeanstalkD
+  * SupervisorD
+  * ImageMagick
+  * Phing
+  * PHPUnit
+  * UglifyJs
+  * Clean-CSS
+
+.right.middle[= 36 packages required across the team]
+
+---
+class: animated, slideInRight
+
+# Introduction
+
+This talk will be about using vagrant
+
+```
+<?php
+namespace Ents24\Stuff
+use Doug\Package;
+
+$p = new Doug();
+
+$p->run();
+```
+
+
+---
+
+
+#Words
+
+Ents24 lgoo
+
+</textarea>
+		<script src="remark-latest.min.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+			var slideshow = remark.create({
+
+				ratio: "4:3",
+				highlightLanguage: "php",
+				highlightStyle: "tomorrow-night-eighties"
+			});
+		</script>
+	</body>
+</html>
