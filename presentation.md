@@ -65,7 +65,8 @@ class: center, middle
 background-image: url(images/puphpet.png)
 
 # Getting Started
-Using PuPHPet
+![](images/puphpet.png)
+##Using PuPHPet
 ---
 
 ![](images/puphpet-screenshot.png)
@@ -169,10 +170,19 @@ apache:
 ---
 #Shared Folder Speed
 
-* NFS (root)
-* Samba (root)
-* VMWare (money)
-* 
+Virtualbox is slow (allegedly).
+
+* NFS (Linux / OSX)
+	* Requres root
+
+* Samba (Windows)
+	* Requires administrator privileges 
+	* Creates new share every time you boot!
+
+* VMWare
+	* Costs money!
+	* Both software & vagrant plugin required
+
 ---
 class: center, middle
 #Port Forwarding
@@ -232,6 +242,9 @@ Launch list :
 <key>ProgramArguments</key>
 <array>
 	<string>pfctl -e -f /etc/pf.conf</string>
+	<string>-e</string>
+	<string>-f</string>
+	<string>/etc/pf.conf</string>
 </array>
 ```
 
@@ -240,11 +253,51 @@ class: center, middle
 #Golden Master
 
 ---
-class: center
 #Puppet is Idempotent
 
-p = Puppet Manifest
-
-x = System State
-
+.center[
 ![](images/idempotent.png)
+]
+
+You can apply a puppet manifest to the same system as many times as you want!
+
+```c#
+C:\Users\Doug\Code\vagrant>vagrant provision
+C:\Users\Doug\Code\vagrant>vagrant provision
+C:\Users\Doug\Code\vagrant>vagrant provision
+C:\Users\Doug\Code\vagrant>vagrant provision
+```
+---
+#Packaging
+
+Vagrantfile :
+```
+config.vm.box     = "debian-wheezy72-x64-vbox43"
+config.vm.box_url = "http://share/vagrant/debian-wheezy72-x64-vbox43.box"
+```
+
+```
+C:\Users\Doug\Code\vagrant>vagrant provision
+...
+20 minutes later
+...
+C:\Users\Doug\Code\vagrant>vagrant package --output ents24-base-2014-10-07
+```
+
+```
+config.vm.box     = "ents24-base-2014-10-07"
+config.vm.box_url = "http://share/vagrant/ents24-base-2014-10-07.box"
+```
+
+Takes 2 minutes:
+```
+C:\Users\Doug\Code\vagrant>vagrant provision
+```
+
+???
+
+Rinse, Repeat
+---
+class: center, middle
+
+#Questions?
