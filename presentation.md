@@ -168,8 +168,11 @@ apache:
                 - set Served-As "HTTPS"
 ```
 ---
+class: center, middle
 #Shared Folder Speed
 
+---
+#Shared Folder Speed
 Virtualbox is slow (allegedly).
 
 * NFS (Linux / OSX)
