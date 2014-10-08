@@ -12,9 +12,9 @@ class: table-list, center
 
 --
 
-* ![](images/icons/ubuntu.png)
-* ![](images/icons/ubuntu.png)
-* ![](images/icons/ubuntu.png)
+* ![](images/icons/linux.png)
+* ![](images/icons/linux.png)
+* ![](images/icons/linux.png)
 --
 
 * ![](images/icons/windows.png)
@@ -212,8 +212,8 @@ sudo apt-get install rinetd
 /etc/rinetd.conf:
 ```
 # bindadress bindport connectaddress connectport
-192.168.2.1 80 192.168.2.3 80
-192.168.2.1 443 192.168.2.3 443
+0.0.0.0 80 127.0.0.1 8080
+0.0.0.0 443 127.0.0.1 8443
 ```
 
 ---
@@ -261,7 +261,7 @@ class: center, middle
 
 You can apply a puppet manifest to the same system as many times as you want!
 
-```c#
+```
 C:\Users\Doug\Code\vagrant>vagrant provision
 C:\Users\Doug\Code\vagrant>vagrant provision
 C:\Users\Doug\Code\vagrant>vagrant provision
